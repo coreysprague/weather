@@ -22,7 +22,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onSearch(_ sender: UIButton) {
-		currentForecast.viewModel = weatherService.getCurrentForecast(searchString: searchText.text!)
+		weatherService.getCurrentForecast(searchString: searchText.text!, completion: { [weak self](forecast: CurrentForecastViewModel) in
+			self?.currentForecast.viewModel = forecast
+		})
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
