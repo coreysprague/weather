@@ -1,22 +1,28 @@
-//
-//  WeatherService.swift
-//  WeatherApp
-//
-//  Created by Leslie Perdue on 7/28/17.
-//  Copyright © 2017 Corey Sprague. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import SwiftyJSON
 
+struct ForecastModel {
+	let temperature: Int
+	let description: String
+	let timeOfDay: Date
+}
+
+struct FiveDayForecastModel {
+	let forecast: [ForecastModel]
+}
+
 protocol WeatherService {
 	func getCurrentForecast(searchString: String, completion: @escaping (_ forecast: CurrentForecastViewModel) -> Void)
+	
+	func getFiveDayForecast(searchString: String, completion: @escaping (_ forecast: FiveDayForecastModel) -> Void)
 }
 
 class OpenWeatherMapService: WeatherService {
+	private let apiKey:String = "95d190a434083879a6398aafd54d9e73"
+	
 	func getCurrentForecast(searchString: String, completion: @escaping (_ forecast: CurrentForecastViewModel) -> Void) {
-		let url = "http://api.openweathermap.org/data/2.5/weather?q=\(searchString)&style=like&APPID=95d190a434083879a6398aafd54d9e73"
+		let url = getRequestUrl(apiMethod: "weather", searchString: searchString)
 		Alamofire.request(url).responseJSON{ (responseData) -> Void in
 			if((responseData.result.value) != nil) {
 				let json = JSON(responseData.result.value!)
@@ -33,5 +39,32 @@ class OpenWeatherMapService: WeatherService {
 				completion(forecast)
 			}
 		}
+	}
+	
+	func getFiveDayForecast(searchString: String, completion: @escaping (FiveDayForecastModel) -> Void) {
+		let url = getRequestUrl(apiMethod: "forecast", searchString: searchString)
+		Alamofire.request(url).responseJSON{ response in
+			switch response.result {
+			case .success(let value):
+				let json = JSON(value)
+				print(json)
+				var forecasts = [ForecastModel]()
+				for (_,subJson):(String, JSON) in json["list"] {
+					let temperature = (Int)(subJson["main"]["temp"].double! * (9/5) - 459.67)
+					let description = subJson["weather"][0]["main"].string!
+					let time = Date(timeIntervalSince1970: subJson["dt"].doubleValue)
+					forecasts.append(ForecastModel(temperature: temperature, description: description, timeOfDay: time))
+				}
+				let forecast = FiveDayForecastModel(forecast: forecasts)
+				completion(forecast)
+			case .failure(let error):
+				print(error)
+			}
+		}
+	}
+	
+	private func getRequestUrl(apiMethod: String, searchString: String) -> String{
+		let encodedSearchString = searchString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+		return "http://api.openweathermap.org/data/2.5/\(apiMethod)?q=\(encodedSearchString ?? ""))&APPID=\(apiKey)"
 	}
 }
