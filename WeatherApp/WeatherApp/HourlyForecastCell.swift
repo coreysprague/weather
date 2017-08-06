@@ -1,30 +1,37 @@
+//
+//  FiveDayForecast.swift
+//  WeatherApp
+//
+//  Created by Leslie Perdue on 7/28/17.
+//  Copyright © 2017 Corey Sprague. All rights reserved.
+//
+
+import Foundation
+
 import UIKit
 
-@IBDesignable class CurrentForecast: UIView {
+@IBDesignable class HourlyForecastCell: UICollectionViewCell {
 	var view: UIView!
 	
-	@IBOutlet weak var location: UILabel!
 	@IBOutlet weak var temperature: UILabel!
-	@IBOutlet weak var unitCharacter: UILabel!
-	@IBOutlet weak var forecastDescription: UILabel!
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		setup()
-	}
+	@IBOutlet weak var hour: UILabel!
+	let hourOfDayFormatter: DateFormatter = DateFormatter()
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		setup()
 	}
 	
-	var viewModel : CurrentForecastViewModel? {
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		setup()
+	}
+	
+	var viewModel : ForecastModel? {
 		get { return nil}
 		set (forecast) {
-			location.text = forecast?.location
 			temperature.text = "\(forecast?.temperature ?? 0)"
-			unitCharacter.text = forecast?.unit
-			forecastDescription.text = forecast?.description
+			hour.text = hourOfDayFormatter.string(from: (forecast?.timeOfDay)!)
 		}
 		
 	}
@@ -37,6 +44,7 @@ import UIKit
 		                         UIViewAutoresizing.flexibleHeight]
 		
 		addSubview(view)
+		hourOfDayFormatter.setLocalizedDateFormatFromTemplate("HH")
 	}
 	
 	func loadViewFromNib() -> UIView! {

@@ -12,7 +12,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 
 	@IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-	@IBOutlet weak var currentForecast: CurrentForecast!
+	@IBOutlet weak var currentForecast: CurrentForecastView!
 	@IBOutlet weak var hourlyForecast: UICollectionView!
 	
 	private var weatherService: WeatherService = OpenWeatherMapService()
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		// get a reference to our storyboard cell
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! HourlyForecast
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! HourlyForecastCell
 		
 		// Use the outlet in our custom class to get a reference to the UILabel in the cell
 		cell.viewModel = self.items[indexPath.item]
