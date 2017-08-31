@@ -18,13 +18,13 @@ import UIKit
 		setup()
 	}
 	
-	var viewModel : CurrentForecastViewModel? {
+	var viewModel : WeatherViewModel? {
 		get { return nil}
 		set (forecast) {
 			location.text = forecast?.location
-			temperature.text = "\(forecast?.temperature ?? 0)"
-			unitCharacter.text = forecast?.unit
-			forecastDescription.text = forecast?.description
+			temperature.text = forecast?.today?.temp.value
+			unitCharacter.text = forecast?.today?.temp.unit
+			forecastDescription.text = forecast?.today?.description
 		}
 		
 	}

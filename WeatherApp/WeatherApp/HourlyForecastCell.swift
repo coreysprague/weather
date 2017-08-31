@@ -15,7 +15,6 @@ import UIKit
 	
 	@IBOutlet weak var temperature: UILabel!
 	@IBOutlet weak var hour: UILabel!
-	let hourOfDayFormatter: DateFormatter = DateFormatter()
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
@@ -27,11 +26,11 @@ import UIKit
 		setup()
 	}
 	
-	var viewModel : ForecastModel? {
+	var viewModel : HourlyForecastViewModel? {
 		get { return nil}
 		set (forecast) {
-			temperature.text = "\(forecast?.temperature ?? 0)"
-			hour.text = hourOfDayFormatter.string(from: (forecast?.timeOfDay)!)
+			temperature.text = forecast?.temp
+			hour.text = forecast?.when
 		}
 		
 	}
@@ -44,14 +43,12 @@ import UIKit
 		                         UIViewAutoresizing.flexibleHeight]
 		
 		addSubview(view)
-		hourOfDayFormatter.setLocalizedDateFormatFromTemplate("HH")
 	}
 	
 	func loadViewFromNib() -> UIView! {
 		let bundle = Bundle(for: type(of: self))
 		let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
 		let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-		
 		return view
 	}
 }

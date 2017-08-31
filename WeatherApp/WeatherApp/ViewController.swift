@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  WeatherApp
-//
-//  Created by Leslie Perdue on 7/21/17.
-//  Copyright © 2017 Corey Sprague. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource {
@@ -15,18 +7,16 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 	@IBOutlet weak var currentForecast: CurrentForecastView!
 	@IBOutlet weak var hourlyForecast: UICollectionView!
 	
-	private var weatherService: WeatherService = OpenWeatherMapService()
+	private var viewModel: WeatherViewModel = WeatherViewModel(weatherService: OpenWeatherMapService())
 	
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func onSearch(_ sender: UIButton) {
-		weatherService.getCurrentForecast(searchString: searchText.text!, completion: { [weak self](forecast: CurrentForecastViewModel) in
-			self?.currentForecast.viewModel = forecast
-		})
-		weatherService.getFiveDayForecast(searchString: searchText.text!, completion: { [weak self](forecast: FiveDayForecastModel) in
-			self?.items = (forecast.forecast)
+		viewModel.search(searchString: searchText.text!, completion: { [weak self] in
+			self?.currentForecast.viewModel = self?.viewModel
+			self?.items = (self?.viewModel.hourlyForecast)!
 			self?.hourlyForecast.reloadData()
 		})
     }
@@ -39,7 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 	
 	
 	let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-	var items: [ForecastModel] = [ForecastModel]()
+	var items: [HourlyForecastViewModel] = [HourlyForecastViewModel]()
 
 	
 	

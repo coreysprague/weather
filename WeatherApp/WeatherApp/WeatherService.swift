@@ -8,12 +8,20 @@ struct ForecastModel {
 	let timeOfDay: Date
 }
 
+struct CurrentForecastModel {
+	let city: String
+	let country: String
+	let temperature: Double
+	let unit: String
+	let description: String
+}
+
 struct FiveDayForecastModel {
 	let forecast: [ForecastModel]
 }
 
 protocol WeatherService {
-	func getCurrentForecast(searchString: String, completion: @escaping (_ forecast: CurrentForecastViewModel) -> Void)
+	func getCurrentForecast(searchString: String, completion: @escaping (_ forecast: CurrentForecastModel) -> Void)
 	
 	func getFiveDayForecast(searchString: String, completion: @escaping (_ forecast: FiveDayForecastModel) -> Void)
 }
@@ -21,21 +29,17 @@ protocol WeatherService {
 class OpenWeatherMapService: WeatherService {
 	private let apiKey:String = "95d190a434083879a6398aafd54d9e73"
 	
-	func getCurrentForecast(searchString: String, completion: @escaping (_ forecast: CurrentForecastViewModel) -> Void) {
+	func getCurrentForecast(searchString: String, completion: @escaping (_ forecast: CurrentForecastModel) -> Void) {
 		let url = getRequestUrl(apiMethod: "weather", searchString: searchString)
 		Alamofire.request(url).responseJSON{ (responseData) -> Void in
 			if((responseData.result.value) != nil) {
 				let json = JSON(responseData.result.value!)
-				let city = json["name"].string!
-				let country = json["sys"]["country"].string!
-				
-				let temperature = (Int)(json["main"]["temp"].double! * (9/5) - 459.67)
-				let forecastDescription = json["weather"][0]["description"].string!
-				
-				let forecast = CurrentForecastViewModel(location: "\(city), \(country)",
-				                                        temperature: temperature,
-				                                        unit: "°F",
-				                                        description: forecastDescription)
+				let temperature = (json["main"]["temp"].double! * (9/5) - 459.67)
+				let forecast = CurrentForecastModel(city: json["name"].string!,
+				                                    country: json["sys"]["country"].string!,
+													temperature: temperature,
+													unit: "°F",
+													description: json["weather"][0]["description"].string!)
 				completion(forecast)
 			}
 		}
