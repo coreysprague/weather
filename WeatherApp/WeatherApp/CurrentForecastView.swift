@@ -7,6 +7,9 @@ import UIKit
 	@IBOutlet weak var temperature: UILabel!
 	@IBOutlet weak var unitCharacter: UILabel!
 	@IBOutlet weak var forecastDescription: UILabel!
+	@IBOutlet weak var sunrise: UILabel!
+	@IBOutlet weak var sunset: UILabel!
+	@IBOutlet weak var lastUpdated: UILabel!
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -25,6 +28,9 @@ import UIKit
 			temperature.text = forecast?.today?.temp.value
 			unitCharacter.text = forecast?.today?.temp.unit
 			forecastDescription.text = forecast?.today?.description
+			sunrise.text = forecast?.today?.sunrise
+			sunset.text = forecast?.today?.sunset
+			lastUpdated.text = forecast?.lastUpdated
 		}
 		
 	}
