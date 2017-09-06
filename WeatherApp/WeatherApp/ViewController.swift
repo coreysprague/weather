@@ -1,4 +1,5 @@
 import UIKit
+import SideMenu
 
 class ViewController: UIViewController, UICollectionViewDataSource {
 
@@ -11,6 +12,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		SideMenuManager.menuAnimationBackgroundColor = UIColor.clear
+		SideMenuManager.menuPresentMode = .menuSlideIn
+		SideMenuManager.menuAnimationFadeStrength = 0.2
     }
 
     @IBAction func onSearch(_ sender: UIButton) {

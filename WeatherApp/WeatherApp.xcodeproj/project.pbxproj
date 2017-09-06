@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0142081F5FAE24003786C6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0142071F5FAE24003786C6 /* MenuViewController.swift */; };
 		0E715D431F230C4F00695360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E715D421F230C4F00695360 /* AppDelegate.swift */; };
 		0E715D451F230C4F00695360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E715D441F230C4F00695360 /* ViewController.swift */; };
 		0E715D481F230C4F00695360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E715D461F230C4F00695360 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		0295DE5D3EDBA9E7C4B60A1A /* Pods_WeatherAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC3EC1DA28ECBC15EA60A51 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
+		0E0142071F5FAE24003786C6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0E715D3F1F230C4F00695360 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E715D421F230C4F00695360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E715D441F230C4F00695360 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				0EF508BD1F2BDE6B0027BFD2 /* WeatherService.swift */,
 				0EF508BF1F2C43F20027BFD2 /* HourlyForecastCell.xib */,
 				0EF508C11F2C440A0027BFD2 /* HourlyForecastCell.swift */,
+				0E0142071F5FAE24003786C6 /* MenuViewController.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				0EF508BE1F2BDE6B0027BFD2 /* WeatherService.swift in Sources */,
 				0EF508C21F2C440A0027BFD2 /* HourlyForecastCell.swift in Sources */,
 				0E715D451F230C4F00695360 /* ViewController.swift in Sources */,
+				0E0142081F5FAE24003786C6 /* MenuViewController.swift in Sources */,
 				0EA94C761F2BADF9001790DB /* CurrentForecastView.swift in Sources */,
 				0E715D431F230C4F00695360 /* AppDelegate.swift in Sources */,
 				0EF508BC1F2BC6450027BFD2 /* CurrentForecastViewModel.swift in Sources */,
