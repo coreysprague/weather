@@ -1,7 +1,7 @@
 import UIKit
 import SideMenu
 
-class ViewController: UIViewController, UICollectionViewDataSource {
+class WeatherViewController: UIViewController, UICollectionViewDataSource {
 
 	@IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var searchButton: UIButton!
