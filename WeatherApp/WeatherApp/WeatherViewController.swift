@@ -1,12 +1,14 @@
 import UIKit
 import SideMenu
 
-class WeatherViewController: UIViewController, UICollectionViewDataSource {
+class WeatherViewController: UIViewController, UICollectionViewDataSource, UIScrollViewDelegate {
 
 	@IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var searchButton: UIButton!
 	@IBOutlet weak var currentForecast: CurrentForecastView!
 	@IBOutlet weak var hourlyForecast: UICollectionView!
+	@IBOutlet weak var scrollView: UIScrollView!
+	@IBOutlet weak var backgroundBlur: UIVisualEffectView!
 	
 	private var viewModel: WeatherViewModel = WeatherViewModel(weatherService: OpenWeatherMapService())
 	
@@ -51,6 +53,12 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource {
 		// Use the outlet in our custom class to get a reference to the UILabel in the cell
 		cell.viewModel = self.items[indexPath.item]
 		return cell
+	}
+	
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		let opacity = max(scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.frame.height),0)
+		
+		backgroundBlur.alpha = min(opacity,1)
 	}
 }
 
