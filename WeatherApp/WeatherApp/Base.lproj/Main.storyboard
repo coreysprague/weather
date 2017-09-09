@@ -85,8 +85,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeQ-oV-yR6" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="1000"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-FG-zCj" customClass="CurrentForecastView" customModule="WeatherApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-16" width="460" height="736"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-FG-zCj" customClass="CurrentForecastView" customModule="WeatherApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-21" width="374" height="736"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX7-4W-Z4h">
@@ -127,7 +127,7 @@
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6VQ-eS-9K6">
-                                                <rect key="frame" x="0.0" y="740" width="374" height="84"/>
+                                                <rect key="frame" x="0.0" y="739" width="374" height="84"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="84" id="5J2-xP-eDm"/>
@@ -156,7 +156,7 @@
                                         <constraints>
                                             <constraint firstItem="6VQ-eS-9K6" firstAttribute="top" secondItem="Twt-FG-zCj" secondAttribute="bottom" constant="20" id="Csx-tJ-Veu"/>
                                             <constraint firstAttribute="height" constant="1000" id="Eb0-In-vGU"/>
-                                            <constraint firstItem="Twt-FG-zCj" firstAttribute="top" secondItem="YeQ-oV-yR6" secondAttribute="top" constant="-16" id="SGn-ww-AGb"/>
+                                            <constraint firstItem="Twt-FG-zCj" firstAttribute="top" secondItem="YeQ-oV-yR6" secondAttribute="top" constant="-17" id="SGn-ww-AGb"/>
                                             <constraint firstItem="Twt-FG-zCj" firstAttribute="width" secondItem="YeQ-oV-yR6" secondAttribute="width" id="XLW-g2-pND"/>
                                             <constraint firstItem="Twt-FG-zCj" firstAttribute="leading" secondItem="YeQ-oV-yR6" secondAttribute="leading" id="Xw2-vH-Sca"/>
                                             <constraint firstItem="6VQ-eS-9K6" firstAttribute="width" secondItem="YeQ-oV-yR6" secondAttribute="width" id="ZUZ-5v-fWe"/>
