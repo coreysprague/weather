@@ -83,48 +83,27 @@
                                 <rect key="frame" x="20" y="20" width="414" height="716"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeQ-oV-yR6" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="1379"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-FG-zCj" customClass="CurrentForecastView" customModule="WeatherApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-21" width="374" height="736"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-FG-zCj" userLabel="Right Now" customClass="RightNowView" customModule="WeatherApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-17" width="374" height="736"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX7-4W-Z4h">
-                                                <rect key="frame" x="10" y="10" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Portland" placeholder="City or Zip" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="36" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="J76-uA-d05" userLabel="Search Bar">
+                                                <rect key="frame" x="40" y="0.0" width="294" height="43"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="onSearch:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="GcT-x3-Jzx"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX7-4W-Z4h">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="+"/>
                                                 <connections>
                                                     <segue destination="0oB-PS-QET" kind="presentation" id="7bG-6F-Ymk"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5v-nf-c9c">
-                                                <rect key="frame" x="260" y="10" width="81" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Search">
-                                                            <attributes>
-                                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bj1-jJ-BAb"/>
-                                                </connections>
-                                            </button>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City or Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtN-gf-n2p">
-                                                <rect key="frame" x="45" y="10" width="178" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHe-Ku-8h7">
-                                                <rect key="frame" x="230" y="10" width="28" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
                                             </button>
                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6VQ-eS-9K6">
                                                 <rect key="frame" x="0.0" y="739" width="374" height="84"/>
@@ -148,19 +127,51 @@
                                                         </view>
                                                     </collectionViewCell>
                                                 </cells>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZJq-LL-ptd"/>
-                                                </connections>
                                             </collectionView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="5" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ADT-7Q-Cs0" userLabel="Daily Forecast">
+                                                <rect key="frame" x="0.0" y="843" width="374" height="254"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="254" id="RYo-AP-br7"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ltJ-TF-mJc" customClass="DailyForecastCell" customModule="WeatherApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ltJ-TF-mJc" id="ktJ-92-JQR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <sections/>
+                                            </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSz-iw-aYb" userLabel="Weather Details" customClass="DetailedView" customModule="WeatherApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="1117" width="374" height="242"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="242" id="9iD-ib-WCl"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="mSz-iw-aYb" firstAttribute="leading" secondItem="YeQ-oV-yR6" secondAttribute="leading" id="0a9-3Y-AKr"/>
+                                            <constraint firstAttribute="trailing" secondItem="J76-uA-d05" secondAttribute="trailing" constant="40" id="5Td-Xd-pbK"/>
+                                            <constraint firstItem="ADT-7Q-Cs0" firstAttribute="top" secondItem="6VQ-eS-9K6" secondAttribute="bottom" constant="20" id="BvO-Ua-I5U"/>
                                             <constraint firstItem="6VQ-eS-9K6" firstAttribute="top" secondItem="Twt-FG-zCj" secondAttribute="bottom" constant="20" id="Csx-tJ-Veu"/>
-                                            <constraint firstAttribute="height" constant="1000" id="Eb0-In-vGU"/>
+                                            <constraint firstItem="SX7-4W-Z4h" firstAttribute="leading" secondItem="YeQ-oV-yR6" secondAttribute="leading" id="GN8-z7-W7P"/>
+                                            <constraint firstItem="J76-uA-d05" firstAttribute="top" secondItem="YeQ-oV-yR6" secondAttribute="top" id="IHa-rf-vI6"/>
+                                            <constraint firstItem="ADT-7Q-Cs0" firstAttribute="width" secondItem="YeQ-oV-yR6" secondAttribute="width" id="LX9-m5-JCt"/>
+                                            <constraint firstItem="mSz-iw-aYb" firstAttribute="top" secondItem="ADT-7Q-Cs0" secondAttribute="bottom" constant="20" id="P7M-tg-wG7"/>
                                             <constraint firstItem="Twt-FG-zCj" firstAttribute="top" secondItem="YeQ-oV-yR6" secondAttribute="top" constant="-17" id="SGn-ww-AGb"/>
+                                            <constraint firstAttribute="bottom" secondItem="mSz-iw-aYb" secondAttribute="bottom" constant="20" id="Srh-MQ-ngi"/>
+                                            <constraint firstItem="J76-uA-d05" firstAttribute="leading" secondItem="YeQ-oV-yR6" secondAttribute="leading" constant="40" id="X4b-gV-TFE"/>
                                             <constraint firstItem="Twt-FG-zCj" firstAttribute="width" secondItem="YeQ-oV-yR6" secondAttribute="width" id="XLW-g2-pND"/>
                                             <constraint firstItem="Twt-FG-zCj" firstAttribute="leading" secondItem="YeQ-oV-yR6" secondAttribute="leading" id="Xw2-vH-Sca"/>
                                             <constraint firstItem="6VQ-eS-9K6" firstAttribute="width" secondItem="YeQ-oV-yR6" secondAttribute="width" id="ZUZ-5v-fWe"/>
                                             <constraint firstItem="6VQ-eS-9K6" firstAttribute="leading" secondItem="YeQ-oV-yR6" secondAttribute="leading" id="doJ-Ko-RvQ"/>
+                                            <constraint firstItem="SX7-4W-Z4h" firstAttribute="top" secondItem="YeQ-oV-yR6" secondAttribute="top" id="eKH-2Y-PLS"/>
+                                            <constraint firstItem="ADT-7Q-Cs0" firstAttribute="leading" secondItem="YeQ-oV-yR6" secondAttribute="leading" id="kP8-0D-hub"/>
+                                            <constraint firstItem="mSz-iw-aYb" firstAttribute="width" secondItem="YeQ-oV-yR6" secondAttribute="width" id="spX-k5-SZx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -197,10 +208,10 @@
                     <connections>
                         <outlet property="backgroundBlur" destination="ACG-Jj-ziZ" id="5Ca-gm-VLm"/>
                         <outlet property="currentForecast" destination="Twt-FG-zCj" id="RIB-sF-52V"/>
+                        <outlet property="dailyForecast" destination="ADT-7Q-Cs0" id="kzw-ts-F5x"/>
                         <outlet property="hourlyForecast" destination="6VQ-eS-9K6" id="QkS-9K-oW2"/>
                         <outlet property="scrollView" destination="GdP-Tr-Xx5" id="ZAz-V0-NX6"/>
-                        <outlet property="searchButton" destination="g5v-nf-c9c" id="kfW-yN-If7"/>
-                        <outlet property="searchText" destination="xtN-gf-n2p" id="SXb-na-h8W"/>
+                        <outlet property="searchText" destination="J76-uA-d05" id="GWA-Je-VGp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

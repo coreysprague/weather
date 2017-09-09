@@ -1,30 +1,17 @@
-import Foundation
 
 import UIKit
 
-@IBDesignable class HourlyForecastCell: UICollectionViewCell {
+@IBDesignable class DailyForecastCell: UITableViewCell {
 	var view: UIView!
-	
-	@IBOutlet weak var temperature: UILabel!
-	@IBOutlet weak var hour: UILabel!
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		setup()
 	}
 	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
+	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setup()
-	}
-	
-	var viewModel : HourlyForecastViewModel? {
-		get { return nil}
-		set (forecast) {
-			temperature.text = forecast?.temp
-			hour.text = forecast?.when
-		}
-		
 	}
 	
 	func setup() {

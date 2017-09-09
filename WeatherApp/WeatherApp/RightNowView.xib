@@ -23,32 +23,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portland, OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuC-sq-FFW" userLabel="Location">
-                    <rect key="frame" x="205" y="503" width="97.5" height="21"/>
+                    <rect key="frame" x="205" y="488" width="97.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Partly Cloudy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlc-MP-xUR" userLabel="Description">
-                    <rect key="frame" x="-1" y="421" width="303" height="29"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlc-MP-xUR" userLabel="Description">
+                    <rect key="frame" x="0.0" y="402" width="303" height="29"/>
                     <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="August 30, 8:58pm PST" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eh1-qV-n2E" userLabel="LastUpdated">
-                    <rect key="frame" x="0.0" y="477" width="302.5" height="21"/>
+                    <rect key="frame" x="0.0" y="462" width="302.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="85°⇡     35°⇣" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ9-yq-Qn1" userLabel="HighLow">
-                    <rect key="frame" x="179" y="458" width="123" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85°⇡     35°⇣" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ9-yq-Qn1" userLabel="HighLow">
+                    <rect key="frame" x="196" y="436" width="107" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsU-OK-BpH" userLabel="Temperature">
-                    <rect key="frame" x="0.0" y="271" width="353" height="141"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsU-OK-BpH" userLabel="Temperature">
+                    <rect key="frame" x="0.0" y="256" width="353" height="141"/>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="125"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                 <constraint firstItem="Eh1-qV-n2E" firstAttribute="top" secondItem="rZ9-yq-Qn1" secondAttribute="bottom" constant="5" id="JEK-iZ-tx4"/>
                 <constraint firstAttribute="trailing" secondItem="tuC-sq-FFW" secondAttribute="trailing" constant="50" id="bs0-54-ndq"/>
                 <constraint firstItem="tuC-sq-FFW" firstAttribute="top" secondItem="Eh1-qV-n2E" secondAttribute="bottom" constant="5" id="fIh-4T-mYo"/>
-                <constraint firstAttribute="bottom" secondItem="tuC-sq-FFW" secondAttribute="bottom" constant="35" id="g1j-q9-I8d"/>
+                <constraint firstAttribute="bottom" secondItem="tuC-sq-FFW" secondAttribute="bottom" constant="50" id="g1j-q9-I8d"/>
                 <constraint firstItem="Eh1-qV-n2E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nh4-hG-ASh"/>
                 <constraint firstAttribute="trailing" secondItem="rZ9-yq-Qn1" secondAttribute="trailing" constant="50" id="oI2-8g-2VR"/>
                 <constraint firstAttribute="trailing" secondItem="Eh1-qV-n2E" secondAttribute="trailing" constant="50" id="rcA-MK-BgN"/>

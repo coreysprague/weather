@@ -1,60 +1,44 @@
 import UIKit
 import SideMenu
 
-class WeatherViewController: UIViewController, UICollectionViewDataSource, UIScrollViewDelegate {
+class WeatherViewController: UIViewController, UIScrollViewDelegate {
 
 	@IBOutlet weak var searchText: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
-	@IBOutlet weak var currentForecast: CurrentForecastView!
+	@IBOutlet weak var currentForecast: RightNowView!
 	@IBOutlet weak var hourlyForecast: UICollectionView!
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var backgroundBlur: UIVisualEffectView!
+	@IBOutlet weak var dailyForecast: UITableView!
 	
 	private var viewModel: WeatherViewModel = WeatherViewModel(weatherService: OpenWeatherMapService())
+	private var hourlyForecastDataSource = HourlyForecastDataSource()
+	private var dailyForecastDataSource = DailyForecastDataSource()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		hourlyForecast.dataSource = hourlyForecastDataSource
+		dailyForecast.dataSource = dailyForecastDataSource
+		dailyForecast.delegate = dailyForecastDataSource
 		SideMenuManager.menuAnimationBackgroundColor = UIColor.clear
 		SideMenuManager.menuPresentMode = .menuSlideIn
 		SideMenuManager.menuAnimationFadeStrength = 0.2
     }
 
-    @IBAction func onSearch(_ sender: UIButton) {
+	@IBAction func onSearch(_ sender: UITextField) {
 		viewModel.search(searchString: searchText.text!, completion: { [weak self] in
 			self?.currentForecast.viewModel = self?.viewModel
-			self?.items = (self?.viewModel.hourlyForecast)!
+			self?.hourlyForecastDataSource.hourlyForecasts = (self?.viewModel.hourlyForecast)!
+			self?.dailyForecastDataSource.dailyForecasts = [1,2,3,4,5]
 			self?.hourlyForecast.reloadData()
+			self?.dailyForecast.reloadData()
 		})
-    }
+	}
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-	
-	
-	
-	let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-	var items: [HourlyForecastViewModel] = [HourlyForecastViewModel]()
-
-	
-	
-	// tell the collection view how many cells to make
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return self.items.count
-	}
-	
-	// make a cell for each cell index path
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		
-		// get a reference to our storyboard cell
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! HourlyForecastCell
-		
-		// Use the outlet in our custom class to get a reference to the UILabel in the cell
-		cell.viewModel = self.items[indexPath.item]
-		return cell
-	}
-	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		let opacity = max(scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.frame.height),0)
 		

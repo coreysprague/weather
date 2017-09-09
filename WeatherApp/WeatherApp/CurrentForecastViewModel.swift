@@ -45,7 +45,7 @@ class WeatherViewModel {
 		weatherService.getFiveDayForecast(searchString: searchString, completion: { (fiveDayForecast) in
 			var hourlyForecasts = [HourlyForecastViewModel]()
 			for forecast in fiveDayForecast.forecast{
-				let hourlyForecast = HourlyForecastViewModel(TemperatureViewModel(Int(forecast.temperature), "°F"), forecast.timeOfDay)
+				let hourlyForecast = HourlyForecastViewModel("\(Int(forecast.temperature))°", forecast.timeOfDay)
 				hourlyForecasts.append(hourlyForecast)
 			}
 			self.hourlyForecast = hourlyForecasts
@@ -80,9 +80,9 @@ struct HourlyForecastViewModel {
 	let when: String
 	let hourOfDayFormatter: DateFormatter = DateFormatter()
 	
-	init(_ temp: TemperatureViewModel, _ time: Date){
+	init(_ temp: String, _ time: Date){
 		hourOfDayFormatter.setLocalizedDateFormatFromTemplate("h a")
-		self.temp = "\(temp.value)\(temp.unit)"
+		self.temp = temp
 		self.when = hourOfDayFormatter.string(from: time)
 	}
 }

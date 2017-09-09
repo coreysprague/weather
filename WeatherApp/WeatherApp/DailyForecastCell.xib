@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85°⇡" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8k-fl-o6Q" userLabel="HighTemp">
+                    <rect key="frame" x="297" y="18" width="31" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35°⇣" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qu-tR-E7j" userLabel="LowTemp">
+                    <rect key="frame" x="336" y="18" width="31" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odj-ad-RXD">
+                    <rect key="frame" x="76" y="15" width="95.5" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kf-pa-mQw">
+                    <rect key="frame" x="8" y="15" width="44" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtg-kJ-Scv">
+                    <rect key="frame" x="252" y="6" width="29" height="38"/>
+                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="29"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="1Kf-pa-mQw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Cw7-03-H0b"/>
+                <constraint firstItem="Wtg-kJ-Scv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ncw-xZ-jeq"/>
+                <constraint firstItem="Odj-ad-RXD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Oq3-JX-kKt"/>
+                <constraint firstItem="Odj-ad-RXD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="76" id="Pcw-7V-9iX"/>
+                <constraint firstItem="l8k-fl-o6Q" firstAttribute="leading" secondItem="Wtg-kJ-Scv" secondAttribute="trailing" constant="16" id="TvX-kM-hhy"/>
+                <constraint firstItem="l8k-fl-o6Q" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Wl4-Ym-FVJ"/>
+                <constraint firstItem="5Qu-tR-E7j" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kvb-jJ-fyv"/>
+                <constraint firstItem="5Qu-tR-E7j" firstAttribute="leading" secondItem="l8k-fl-o6Q" secondAttribute="trailing" constant="8" id="nZs-Ed-ZhU"/>
+                <constraint firstAttribute="trailing" secondItem="5Qu-tR-E7j" secondAttribute="trailing" constant="8" id="uVw-aJ-eTg"/>
+                <constraint firstItem="1Kf-pa-mQw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xAU-qA-d91"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="34.5" y="-230"/>
+        </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85°⇡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zt6-tc-5jA" userLabel="HighTemp">
+            <rect key="frame" x="0.0" y="0.0" width="47" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <nil key="textColor"/>
+            <nil key="highlightedColor"/>
+        </label>
+    </objects>
+</document>

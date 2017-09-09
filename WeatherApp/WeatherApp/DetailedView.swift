@@ -1,39 +1,23 @@
-import Foundation
-
 import UIKit
 
-@IBDesignable class HourlyForecastCell: UICollectionViewCell {
+@IBDesignable class DetailedView: UIView {
 	var view: UIView!
-	
-	@IBOutlet weak var temperature: UILabel!
-	@IBOutlet weak var hour: UILabel!
-	
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		setup()
-	}
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setup()
 	}
 	
-	var viewModel : HourlyForecastViewModel? {
-		get { return nil}
-		set (forecast) {
-			temperature.text = forecast?.temp
-			hour.text = forecast?.when
-		}
-		
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		setup()
 	}
 	
 	func setup() {
 		view = loadViewFromNib()
 		view.frame = bounds
-		
 		view.autoresizingMask = [UIViewAutoresizing.flexibleWidth,
 		                         UIViewAutoresizing.flexibleHeight]
-		
 		addSubview(view)
 	}
 	
