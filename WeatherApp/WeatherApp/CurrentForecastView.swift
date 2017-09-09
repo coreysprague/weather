@@ -25,11 +25,11 @@ import UIKit
 		get { return nil}
 		set (forecast) {
 			location.text = forecast?.location
-			temperature.text = forecast?.today?.temp.value
-			unitCharacter.text = forecast?.today?.temp.unit
+			temperature.text = forecast?.today?.temp
+			//unitCharacter.text = forecast?.today?.temp.unit
 			forecastDescription.text = forecast?.today?.description
-			sunrise.text = forecast?.today?.sunrise
-			sunset.text = forecast?.today?.sunset
+			//sunrise.text = forecast?.today?.sunrise
+			//sunset.text = forecast?.today?.sunset
 			lastUpdated.text = forecast?.lastUpdated
 		}
 		

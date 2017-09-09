@@ -57,7 +57,7 @@ class WeatherViewModel {
 			
 			self.location = "\(forecast!.city), \(forecast!.country)"
 			self.today = Today(
-				temp: TemperatureViewModel(Int(forecast!.temperature), forecast!.unit),
+				temp: "\(Int(forecast!.temperature))°",//TemperatureViewModel(Int(forecast!.temperature), forecast!.unit),
 				description: forecast!.weatherConditions.joined(separator: ", "),
 				sunrise: self.sunTimeFormatter.string(from: forecast!.sunrise),
 				sunset: self.sunTimeFormatter.string(from: forecast!.sunset)
@@ -69,7 +69,7 @@ class WeatherViewModel {
 }
 
 struct Today {
-	let temp: TemperatureViewModel
+	let temp: String
 	let description: String
 	let sunrise: String
 	let sunset: String
