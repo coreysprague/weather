@@ -23,7 +23,7 @@ class WeatherViewModel {
 		locationProvider.locate()
 	}
 	
-	func updateSearchBarWithLocation(location: CLLocation?){
+	private func updateSearchBarWithLocation(location: CLLocation?){
 		if(location != nil) {
 			self.geocoder.reverseGeocodeLocation(location!) { (placemarks, error) in
 				if let reverseLocation = placemarks?.first {
