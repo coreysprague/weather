@@ -7,6 +7,7 @@ import UIKit
 	
 	@IBOutlet weak var temperature: UILabel!
 	@IBOutlet weak var hour: UILabel!
+	@IBOutlet weak var condition: UILabel!
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
@@ -21,8 +22,9 @@ import UIKit
 	var viewModel : HourlyForecastViewModel? {
 		get { return nil}
 		set (forecast) {
-			temperature.text = forecast?.temp
+			temperature.text = forecast?.temperature
 			hour.text = forecast?.when
+			condition.text = forecast?.weather
 		}
 		
 	}

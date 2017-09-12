@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HourlyForecastCell" customModule="WeatherApp" customModuleProvider="target">
             <connections>
+                <outlet property="condition" destination="uX0-pt-GY1" id="XL4-RY-JQc"/>
                 <outlet property="hour" destination="BuC-hA-uwp" id="Nqx-fl-bEG"/>
                 <outlet property="temperature" destination="Q2E-7Z-EYS" id="moi-By-Gme"/>
             </connections>
@@ -24,15 +25,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="64" height="21"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuC-hA-uwp" userLabel="Time">
                     <rect key="frame" x="0.0" y="53" width="64" height="9"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="☁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX0-pt-GY1">
                     <rect key="frame" x="11" y="26" width="42" height="21"/>

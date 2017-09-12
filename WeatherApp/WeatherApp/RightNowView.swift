@@ -7,6 +7,7 @@ import UIKit
 	@IBOutlet weak var temperature: UILabel!
 	@IBOutlet weak var forecastDescription: UILabel!
 	@IBOutlet weak var lastUpdated: UILabel!
+	@IBOutlet weak var country: UILabel!
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -18,13 +19,14 @@ import UIKit
 		setup()
 	}
 	
-	var viewModel : WeatherViewModel? {
+	var viewModel : RightNowViewModel? {
 		get { return nil}
 		set (forecast) {
-			location.text = forecast?.location
-			temperature.text = forecast?.today?.temp
-			forecastDescription.text = forecast?.today?.description
+			location.text = forecast?.city
+			temperature.text = forecast?.temperature
+			forecastDescription.text = forecast?.weather
 			lastUpdated.text = forecast?.lastUpdated
+			country.text = forecast?.country
 		}
 	}
 	

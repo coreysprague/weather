@@ -9,8 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentForecastView" customModule="WeatherApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RightNowView" customModule="WeatherApp" customModuleProvider="target">
             <connections>
+                <outlet property="country" destination="rpO-CM-wdo" id="Gkj-5W-1X9"/>
                 <outlet property="forecastDescription" destination="qlc-MP-xUR" id="6AS-2R-ZGM"/>
                 <outlet property="lastUpdated" destination="Eh1-qV-n2E" id="OT6-UF-E2t"/>
                 <outlet property="location" destination="tuC-sq-FFW" id="rs4-H1-18l"/>
@@ -22,53 +23,61 @@
             <rect key="frame" x="0.0" y="0.0" width="353" height="559"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portland, OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuC-sq-FFW" userLabel="Location">
-                    <rect key="frame" x="205" y="488" width="97.5" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portland" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuC-sq-FFW" userLabel="Location">
+                    <rect key="frame" x="267" y="488" width="66" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlc-MP-xUR" userLabel="Description">
-                    <rect key="frame" x="0.0" y="402" width="303" height="29"/>
+                    <rect key="frame" x="0.0" y="427" width="333" height="30"/>
                     <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="August 30, 8:58pm PST" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eh1-qV-n2E" userLabel="LastUpdated">
-                    <rect key="frame" x="0.0" y="462" width="302.5" height="21"/>
+                    <rect key="frame" x="0.0" y="462" width="333" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85°⇡     35°⇣" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ9-yq-Qn1" userLabel="HighLow">
-                    <rect key="frame" x="196" y="436" width="107" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsU-OK-BpH" userLabel="Temperature">
-                    <rect key="frame" x="0.0" y="256" width="353" height="141"/>
+                    <rect key="frame" x="0.0" y="281" width="353" height="141"/>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="125"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
-                    <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpO-CM-wdo" userLabel="Country">
+                    <rect key="frame" x="228" y="517" width="105" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <size key="shadowOffset" width="1" height="1"/>
                 </label>
             </subviews>
             <constraints>
                 <constraint firstItem="qlc-MP-xUR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4Qb-ki-zBM"/>
+                <constraint firstAttribute="trailing" secondItem="rpO-CM-wdo" secondAttribute="trailing" constant="20" id="9YC-g5-rdJ"/>
                 <constraint firstItem="qlc-MP-xUR" firstAttribute="top" secondItem="vsU-OK-BpH" secondAttribute="bottom" constant="5" id="D35-Fx-kJp"/>
-                <constraint firstItem="rZ9-yq-Qn1" firstAttribute="top" secondItem="qlc-MP-xUR" secondAttribute="bottom" constant="5" id="EpR-u0-MaO"/>
+                <constraint firstItem="Eh1-qV-n2E" firstAttribute="top" secondItem="qlc-MP-xUR" secondAttribute="bottom" constant="5" id="DHI-ji-8pX"/>
                 <constraint firstItem="vsU-OK-BpH" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="GVM-a9-Yo4"/>
-                <constraint firstAttribute="trailing" secondItem="qlc-MP-xUR" secondAttribute="trailing" constant="50" id="J1Z-es-8gP"/>
-                <constraint firstItem="Eh1-qV-n2E" firstAttribute="top" secondItem="rZ9-yq-Qn1" secondAttribute="bottom" constant="5" id="JEK-iZ-tx4"/>
-                <constraint firstAttribute="trailing" secondItem="tuC-sq-FFW" secondAttribute="trailing" constant="50" id="bs0-54-ndq"/>
+                <constraint firstAttribute="trailing" secondItem="qlc-MP-xUR" secondAttribute="trailing" constant="20" id="J1Z-es-8gP"/>
+                <constraint firstItem="rpO-CM-wdo" firstAttribute="top" secondItem="tuC-sq-FFW" secondAttribute="bottom" constant="8" id="NGs-b6-aVi"/>
+                <constraint firstAttribute="trailing" secondItem="tuC-sq-FFW" secondAttribute="trailing" constant="20" id="bs0-54-ndq"/>
                 <constraint firstItem="tuC-sq-FFW" firstAttribute="top" secondItem="Eh1-qV-n2E" secondAttribute="bottom" constant="5" id="fIh-4T-mYo"/>
-                <constraint firstAttribute="bottom" secondItem="tuC-sq-FFW" secondAttribute="bottom" constant="50" id="g1j-q9-I8d"/>
+                <constraint firstAttribute="bottom" secondItem="rpO-CM-wdo" secondAttribute="bottom" constant="20" id="mun-po-rOX"/>
                 <constraint firstItem="Eh1-qV-n2E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nh4-hG-ASh"/>
-                <constraint firstAttribute="trailing" secondItem="rZ9-yq-Qn1" secondAttribute="trailing" constant="50" id="oI2-8g-2VR"/>
-                <constraint firstAttribute="trailing" secondItem="Eh1-qV-n2E" secondAttribute="trailing" constant="50" id="rcA-MK-BgN"/>
+                <constraint firstAttribute="trailing" secondItem="Eh1-qV-n2E" secondAttribute="trailing" constant="20" id="rcA-MK-BgN"/>
                 <constraint firstItem="vsU-OK-BpH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tMu-Q1-AKg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

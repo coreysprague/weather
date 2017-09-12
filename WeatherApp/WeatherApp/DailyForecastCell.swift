@@ -4,6 +4,21 @@ import UIKit
 @IBDesignable class DailyForecastCell: UITableViewCell {
 	var view: UIView!
 	
+	@IBOutlet weak var dayOfWeek: UILabel!
+	@IBOutlet weak var weather: UILabel!
+	@IBOutlet weak var highTemp: UILabel!
+	@IBOutlet weak var lowTemp: UILabel!
+	
+	var viewModel : DailyForecastViewModel? {
+		get { return nil}
+		set (forecast) {
+			dayOfWeek.text = forecast?.dayOfWeek
+			weather.text = forecast?.weather
+			highTemp.text = forecast?.highTemp
+			lowTemp.text = forecast?.lowTemp
+		}
+	}
+	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		setup()

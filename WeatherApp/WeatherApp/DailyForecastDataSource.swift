@@ -3,9 +3,9 @@ import UIKit
 class DailyForecastDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 	
 	let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-	private var items: [Int] = [Int]()
+	private var items: [DailyForecastViewModel] = [DailyForecastViewModel]()
 	
-	var dailyForecasts: [Int] {
+	var dailyForecasts: [DailyForecastViewModel] {
 		get {
 			return items
 		}
@@ -29,7 +29,7 @@ class DailyForecastDataSource: NSObject, UITableViewDataSource, UITableViewDeleg
 		cell.contentView.backgroundColor = UIColor.clear
 		
 		// Use the outlet in our custom class to get a reference to the UILabel in the cell
-		//cell.viewModel = self.items[indexPath.item]
+		cell.viewModel = self.items[indexPath.item]
 		return cell
 	}
 }
