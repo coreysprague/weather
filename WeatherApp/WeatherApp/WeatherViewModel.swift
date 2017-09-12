@@ -74,14 +74,15 @@ class WeatherViewModel {
 		
 		let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
 		
-		var localizedDailyForecasts = [Int:[ForecastResponse]]()
+		var localizedDailyForecasts = [String:[ForecastResponse]]()
 		for forecast in fiveDayForecast {
-			var components = calendar.dateComponents(in: timeZone, from: forecast.lastUpdated)
-			if(components.weekday != nil){
-				if(localizedDailyForecasts[components.weekday!] == nil){
-					localizedDailyForecasts[components.weekday!] = [forecast]
+			let components = calendar.dateComponents(in: timeZone, from: forecast.lastUpdated)
+			if(components.year != nil && components.month != nil && components.day != nil){
+				let key = "\(components.year)-\(components.month)-\(components.day)"
+				if(localizedDailyForecasts[key] == nil){
+					localizedDailyForecasts[key] = [forecast]
 				} else {
-					localizedDailyForecasts[components.weekday!]!.append(forecast)
+					localizedDailyForecasts[key]!.append(forecast)
 				}
 			}
 			hourlyForecasts.append(HourlyForecastViewModel(forecast: forecast, timeZone: timeZone))
