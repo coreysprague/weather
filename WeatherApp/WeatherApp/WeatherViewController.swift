@@ -29,9 +29,6 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 		SideMenuManager.menuPresentMode = .menuSlideIn
 		SideMenuManager.menuAnimationFadeStrength = 0.2
 		viewModel.load()
-		print(view.frame.width)
-		print(backgroundBlur.frame.origin)
-		print(backgroundBlur.frame.width)
     }
 
 	private func updateSearchBar(searchString: String?){
@@ -40,8 +37,6 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 	
 	@IBAction func onSearch(_ sender: UITextField) {
 		//TODO: add basic validation
-		//TODO: clear child view models
-		
 		UIView.animate(withDuration: 0.75, delay: 0, options: .curveEaseOut, animations: {
 			self.backgroundImage.alpha = 0
 			self.rightNow.alpha = 0
@@ -68,7 +63,6 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 			self.backgroundImage.alpha = 1.0
 			self.rightNow.alpha = 1.0
 		}, completion: nil)
-		
 	}
 	
 	private func updateForecast(forecast: ForecastViewModel?){
@@ -82,7 +76,6 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
