@@ -22,12 +22,10 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 		viewModel.currentWeather.addListener(handler: updateWeather)
 		viewModel.forecast.addListener(handler: updateForecast)
 		viewModel.searchLocation.addListener(handler: updateSearchBar)
+		
 		hourlyForecast.dataSource = hourlyForecastDataSource
 		dailyForecast.dataSource = dailyForecastDataSource
-		dailyForecast.delegate = dailyForecastDataSource
-		SideMenuManager.menuAnimationBackgroundColor = UIColor.clear
-		SideMenuManager.menuPresentMode = .menuSlideIn
-		SideMenuManager.menuAnimationFadeStrength = 0.2
+
 		viewModel.load()
     }
 
@@ -42,7 +40,7 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 			self.rightNow.alpha = 0
 		}, completion: nil)
 		
-		viewModel.search(searchString: searchText.text!, onFailure: showError)
+		viewModel.search(searchString: sender.text!, onFailure: showError)
 		sender.resignFirstResponder()
 	}
 	

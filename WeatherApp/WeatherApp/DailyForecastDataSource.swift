@@ -1,6 +1,6 @@
 import UIKit
 
-class DailyForecastDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+class DailyForecastDataSource: NSObject, UITableViewDataSource {
 	
 	let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
 	private var items: [DailyForecastViewModel] = [DailyForecastViewModel]()
