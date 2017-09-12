@@ -65,6 +65,7 @@ class WeatherViewModel {
 		self.currentWeather.value = CurrentWeatherViewModel(rightNow: rightNow, details: details, backgroundImageAsset: backgroundImage)
 	}
 	
+	///THIS WHOLE METHOD WAS SPIKED IN AND NEEDS TO BE REFACTORED - ITS A MESS
 	private func buildForecastViewModel(fiveDayForecast: [ForecastResponse], geoLocation: CLPlacemark?) {
 		let timeZone = geoLocation?.timeZone ?? TimeZone.current
 		

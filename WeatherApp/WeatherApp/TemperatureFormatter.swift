@@ -1,11 +1,3 @@
-//
-//  TemperatureFormatter.swift
-//  WeatherApp
-//
-//  Created by Leslie Perdue on 9/11/17.
-//  Copyright © 2017 Corey Sprague. All rights reserved.
-//
-
 import Foundation
 
 class TemperatureFormatter : MeasurementFormatter {
