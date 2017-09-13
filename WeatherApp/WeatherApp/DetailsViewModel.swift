@@ -46,7 +46,7 @@ struct DetailsViewModel {
 		
 		let totalDegrees = forecast.wind.deg.converted(to: .degrees).value
 		let directions = ["N","NE","E","SE","S","SW","W","NW"]
-		let directionIndex = Int((totalDegrees.truncatingRemainder(dividingBy: 360) / 45).truncatingRemainder(dividingBy: 8) + 0.5)
+		let directionIndex = Int((totalDegrees.truncatingRemainder(dividingBy: 360) / 45).truncatingRemainder(dividingBy: directions.count) + 0.5)
 		
 		let windSpeed = windSpeedFormatter.string(from: forecast.wind.speed)
 		if directionIndex >= 0 && directionIndex <= directions.count-1 {

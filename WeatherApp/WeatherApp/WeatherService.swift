@@ -112,11 +112,20 @@ class OpenWeatherMapService: WeatherService {
 			weatherConditions.append(weatherCondition)
 		}
 		
-		let weather = Weather(temperature: Measurement(value: json["main"]["temp"].doubleValue, unit: UnitTemperature.kelvin), highTemperature: Measurement(value: json["main"]["temp_max"].doubleValue, unit: UnitTemperature.kelvin), lowTemperature: Measurement(value: json["main"]["temp_min"].doubleValue, unit: UnitTemperature.kelvin), pressure: Measurement(value: json["main"]["pressure"].doubleValue, unit: UnitPressure.hectopascals), humidity: json["main"]["humidity"].doubleValue)
+		let weather = Weather(
+						temperature: Measurement(value: json["main"]["temp"].doubleValue, unit: UnitTemperature.kelvin),
+						highTemperature: Measurement(value: json["main"]["temp_max"].doubleValue, unit: UnitTemperature.kelvin),
+						lowTemperature: Measurement(value: json["main"]["temp_min"].doubleValue, unit: UnitTemperature.kelvin),
+						pressure: Measurement(value: json["main"]["pressure"].doubleValue, unit: UnitPressure.hectopascals),
+						humidity: json["main"]["humidity"].doubleValue
+		)
 		
 		let visibility = Measurement(value: json["visibility"].doubleValue, unit: UnitLength.meters)
 		
-		let wind = Wind(speed: Measurement(value: json["wind"]["speed"].doubleValue, unit: UnitSpeed.metersPerSecond), deg: Measurement(value: json["wind"]["deg"].doubleValue, unit: UnitAngle.radians))
+		let wind = Wind(
+						speed: Measurement(value: json["wind"]["speed"].doubleValue, unit: UnitSpeed.metersPerSecond),
+						deg: Measurement(value: json["wind"]["deg"].doubleValue, unit: UnitAngle.radians)
+		)
 		
 		let lastUpdated = Date(timeIntervalSince1970: json["dt"].doubleValue)
 		

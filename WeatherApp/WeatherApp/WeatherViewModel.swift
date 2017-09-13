@@ -28,20 +28,23 @@ class WeatherViewModel {
 			self.geocoder.reverseGeocodeLocation(location!) { (placemarks, error) in
 				if let reverseLocation = placemarks?.first {
 					self.searchLocation.value = reverseLocation.locality
-					self.weatherService.getWeatherByLocation(location: (reverseLocation.location)!, completion: self.displayWeather, failure: { (Error) in })
+					self.weatherService.getWeatherByLocation(location: reverseLocation?.location, completion: self.displayWeather, failure: { (Error) in print("failed to load weather via GPS")})
 				}
 			}
 		}
 	}
 	
 	func search(searchString: String, onFailure: @escaping (Error) -> Void){
-		let failureWrapper : (Error) -> Void = { (Error) in
+		let failure : (Error) -> Void = { (Error) in
 			self.forecast.value = nil
 			self.currentWeather.value = nil
 			onFailure(Error)
 		}
-		
-		weatherService.getWeatherByCity(city: searchString, completion: displayWeather, failure: failureWrapper)
+		if let zipCode = Int(searchString) {
+			weatherService.getWeatherByZipcode(zipCode: zipCode, completion: displayWeather, failure: failure)
+		} else {
+			weatherService.getWeatherByCity(city: searchString, completion: displayWeather, failure: failure)
+		}
 	}
 	
 	private func displayWeather(forecastResponse: ForecastResponse) {

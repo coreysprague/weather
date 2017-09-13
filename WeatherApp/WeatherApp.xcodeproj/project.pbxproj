@@ -25,8 +25,6 @@
 		0E39EC651F66CDAB001AE143 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E39EC641F66CDAB001AE143 /* ForecastViewModel.swift */; };
 		0E39EC671F66D029001AE143 /* ForecastBackgroundRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E39EC661F66D029001AE143 /* ForecastBackgroundRetriever.swift */; };
 		0E39EC691F66ED1A001AE143 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E39EC681F66ED1A001AE143 /* CurrentWeatherViewModel.swift */; };
-		0E3DF47F1F639DE3007EE6C1 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3DF47E1F639DE3007EE6C1 /* SearchView.xib */; };
-		0E3DF4811F639DFF007EE6C1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DF4801F639DFF007EE6C1 /* SearchView.swift */; };
 		0E3DF4831F6481AA007EE6C1 /* DetailedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3DF4821F6481AA007EE6C1 /* DetailedView.xib */; };
 		0E3DF4851F6481D0007EE6C1 /* DailyForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3DF4841F6481D0007EE6C1 /* DailyForecastCell.xib */; };
 		0E3DF4871F6481E8007EE6C1 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DF4861F6481E8007EE6C1 /* DetailedView.swift */; };
@@ -89,8 +87,6 @@
 		0E39EC641F66CDAB001AE143 /* ForecastViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		0E39EC661F66D029001AE143 /* ForecastBackgroundRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBackgroundRetriever.swift; sourceTree = "<group>"; };
 		0E39EC681F66ED1A001AE143 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
-		0E3DF47E1F639DE3007EE6C1 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
-		0E3DF4801F639DFF007EE6C1 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0E3DF4821F6481AA007EE6C1 /* DetailedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedView.xib; sourceTree = "<group>"; };
 		0E3DF4841F6481D0007EE6C1 /* DailyForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyForecastCell.xib; sourceTree = "<group>"; };
 		0E3DF4861F6481E8007EE6C1 /* DetailedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
@@ -201,8 +197,6 @@
 				0EF508C11F2C440A0027BFD2 /* HourlyForecastCell.swift */,
 				0EA94C791F2BB1BA001790DB /* RightNowView.xib */,
 				0EA94C751F2BADF9001790DB /* RightNowView.swift */,
-				0E3DF47E1F639DE3007EE6C1 /* SearchView.xib */,
-				0E3DF4801F639DFF007EE6C1 /* SearchView.swift */,
 				0E3DF4821F6481AA007EE6C1 /* DetailedView.xib */,
 				0E3DF4861F6481E8007EE6C1 /* DetailedView.swift */,
 				0E3DF4841F6481D0007EE6C1 /* DailyForecastCell.xib */,
@@ -415,7 +409,6 @@
 				0E715D4D1F230C4F00695360 /* LaunchScreen.storyboard in Resources */,
 				0E3DF4831F6481AA007EE6C1 /* DetailedView.xib in Resources */,
 				0E715D4A1F230C4F00695360 /* Assets.xcassets in Resources */,
-				0E3DF47F1F639DE3007EE6C1 /* SearchView.xib in Resources */,
 				0EA94C7A1F2BB1BA001790DB /* RightNowView.xib in Resources */,
 				0E715D481F230C4F00695360 /* Main.storyboard in Resources */,
 				0EF508C01F2C43F20027BFD2 /* HourlyForecastCell.xib in Resources */,
@@ -598,7 +591,6 @@
 				0E0142081F5FAE24003786C6 /* MenuViewController.swift in Sources */,
 				0E39EC551F66CB13001AE143 /* DailyForecastViewModel.swift in Sources */,
 				0E200D1E1F65888000252FCD /* ForecastResponse.swift in Sources */,
-				0E3DF4811F639DFF007EE6C1 /* SearchView.swift in Sources */,
 				0E39EC571F66CB46001AE143 /* HourlyForecastViewModel.swift in Sources */,
 				0E3DF48D1F6482DD007EE6C1 /* HourlyForecastDataSource.swift in Sources */,
 				0EA94C761F2BADF9001790DB /* RightNowView.swift in Sources */,

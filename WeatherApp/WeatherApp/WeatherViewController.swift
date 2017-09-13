@@ -18,9 +18,9 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		viewModel.currentWeather.addListener(handler: updateWeather)
-		viewModel.forecast.addListener(handler: updateForecast)
-		viewModel.searchLocation.addListener(handler: updateSearchBar)
+		viewModel.currentWeather.addListener(handler: { [weak self] in self!.updateWeather }())
+		viewModel.forecast.addListener(handler: { [weak self] in self!.updateForecast }())
+		viewModel.searchLocation.addListener(handler: { [weak self] in self!.updateSearchBar }())
 		
 		hourlyForecast.dataSource = hourlyForecastDataSource
 		dailyForecast.dataSource = dailyForecastDataSource
@@ -33,13 +33,16 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 	}
 	
 	@IBAction func onSearch(_ sender: UITextField) {
-		//TODO: add basic validation
+		guard let searchText = sender.text, !searchText.isEmpty else {
+			return
+		}
+		
 		UIView.animate(withDuration: 0.75, delay: 0, options: .curveEaseOut, animations: {
 			self.backgroundImage.alpha = 0
 			self.rightNow.alpha = 0
 		}, completion: nil)
 		
-		viewModel.search(searchString: sender.text!, onFailure: showError)
+		viewModel.search(searchString: searchText, onFailure: showError)
 		sender.resignFirstResponder()
 	}
 	
