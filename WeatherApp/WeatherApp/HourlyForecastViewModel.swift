@@ -3,7 +3,7 @@ import Foundation
 struct HourlyForecastViewModel {
 	let temperature: String
 	let when: String
-	let weather: String = ""
+	let weather: String
 	
 	init(forecast: ForecastResponse, timeZone: TimeZone) {
 		temperature = TemperatureFormatter().string(from: forecast.weather.temperature)
@@ -15,6 +15,9 @@ struct HourlyForecastViewModel {
 		
 		if let primaryCondition = forecast.conditions.first {
 			weather = WeatherConditionFormatter().string(from: primaryCondition)
+		} else {
+			weather = ""
 		}
+		
 	}
 }

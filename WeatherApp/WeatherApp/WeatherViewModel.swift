@@ -28,7 +28,7 @@ class WeatherViewModel {
 			self.geocoder.reverseGeocodeLocation(location!) { (placemarks, error) in
 				if let reverseLocation = placemarks?.first {
 					self.searchLocation.value = reverseLocation.locality
-					self.weatherService.getWeatherByLocation(location: reverseLocation?.location, completion: self.displayWeather, failure: { (Error) in print("failed to load weather via GPS")})
+					self.weatherService.getWeatherByLocation(location: reverseLocation.location!, completion: self.displayWeather, failure: { (Error) in print("failed to load weather via GPS")})
 				}
 			}
 		}
