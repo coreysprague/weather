@@ -22,16 +22,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85°⇡" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8k-fl-o6Q" userLabel="HighTemp">
-                    <rect key="frame" x="295" y="17.5" width="32" height="15.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-185°⇡" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8k-fl-o6Q" userLabel="HighTemp">
+                    <rect key="frame" x="275.5" y="17.5" width="43.5" height="15.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <size key="shadowOffset" width="1" height="1"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35°⇣" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qu-tR-E7j" userLabel="LowTemp">
-                    <rect key="frame" x="335" y="17.5" width="32" height="15.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-135°⇣" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qu-tR-E7j" userLabel="LowTemp">
+                    <rect key="frame" x="324" y="17.5" width="43" height="15.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                     <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☂" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtg-kJ-Scv">
-                    <rect key="frame" x="250" y="6" width="29" height="38"/>
+                    <rect key="frame" x="234" y="6" width="29" height="38"/>
                     <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="29"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -57,10 +57,10 @@
                 <constraint firstItem="Wtg-kJ-Scv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ncw-xZ-jeq"/>
                 <constraint firstItem="Odj-ad-RXD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Oq3-JX-kKt"/>
                 <constraint firstItem="Odj-ad-RXD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Pcw-7V-9iX"/>
-                <constraint firstItem="l8k-fl-o6Q" firstAttribute="leading" secondItem="Wtg-kJ-Scv" secondAttribute="trailing" constant="16" id="TvX-kM-hhy"/>
                 <constraint firstItem="l8k-fl-o6Q" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Wl4-Ym-FVJ"/>
+                <constraint firstAttribute="trailing" secondItem="Wtg-kJ-Scv" secondAttribute="trailing" constant="112" id="YOQ-7S-HUk"/>
+                <constraint firstAttribute="trailing" secondItem="l8k-fl-o6Q" secondAttribute="trailing" constant="56" id="k3y-c0-HPi"/>
                 <constraint firstItem="5Qu-tR-E7j" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kvb-jJ-fyv"/>
-                <constraint firstItem="5Qu-tR-E7j" firstAttribute="leading" secondItem="l8k-fl-o6Q" secondAttribute="trailing" constant="8" id="nZs-Ed-ZhU"/>
                 <constraint firstAttribute="trailing" secondItem="5Qu-tR-E7j" secondAttribute="trailing" constant="8" id="uVw-aJ-eTg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

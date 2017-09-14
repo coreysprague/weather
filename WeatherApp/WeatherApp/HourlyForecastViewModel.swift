@@ -5,13 +5,13 @@ struct HourlyForecastViewModel {
 	let when: String
 	let weather: String
 	
-	init(forecast: ForecastResponse, timeZone: TimeZone) {
+	init(forecast: HourlyForecastResponse, timeZone: TimeZone) {
 		temperature = TemperatureFormatter().string(from: forecast.weather.temperature)
 		
 		let hourOfDayFormatter: DateFormatter = DateFormatter()
 		hourOfDayFormatter.setLocalizedDateFormatFromTemplate("h a")
 		hourOfDayFormatter.timeZone = timeZone
-		when = hourOfDayFormatter.string(from: forecast.lastUpdated)
+		when = hourOfDayFormatter.string(from: forecast.time)
 		
 		if let primaryCondition = forecast.conditions.first {
 			weather = WeatherConditionFormatter().string(from: primaryCondition)

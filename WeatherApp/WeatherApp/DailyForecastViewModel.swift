@@ -6,17 +6,21 @@ struct DailyForecastViewModel {
 	let highTemp: String
 	let lowTemp: String
 	
-	init(date: Date, timeZone: TimeZone, highTemp: Measurement<UnitTemperature>, lowTemp: Measurement<UnitTemperature>, condition: WeatherCondition){
+	init(forecast: DailyForecastResponse, timeZone: TimeZone){
 		
 		let dayOfWeekFormatter = DateFormatter()
 		dayOfWeekFormatter.setLocalizedDateFormatFromTemplate("cccc")
 		dayOfWeekFormatter.timeZone = timeZone
-		dayOfWeek = dayOfWeekFormatter.string(from: date)
+		dayOfWeek = dayOfWeekFormatter.string(from: forecast.date)
 		
-		weather = WeatherConditionFormatter().string(from: condition)
+		if let condition = forecast.conditions.first {
+			weather = WeatherConditionFormatter().string(from: condition)
+		} else {
+			weather = ""
+		}
 		
 		let temperatureFormatter = TemperatureFormatter()
-		self.highTemp = "\(temperatureFormatter.string(from: highTemp))⇡"
-		self.lowTemp = "\(temperatureFormatter.string(from: lowTemp))⇣"
+		self.highTemp = "\(temperatureFormatter.string(from: forecast.highTemperature))⇡"
+		self.lowTemp = "\(temperatureFormatter.string(from: forecast.lowTemperature))⇣"
 	}
 }

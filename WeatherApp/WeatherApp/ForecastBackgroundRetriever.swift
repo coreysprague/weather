@@ -2,7 +2,7 @@ import Foundation
 
 class ForecastBackgroundRetriever {
 	
-	func getBackgroundImage(currentForecast: ForecastResponse, localTimeZone: TimeZone) -> String {
+	func getBackgroundImage(currentForecast: CurrentWeatherResponse, localTimeZone: TimeZone) -> String {
 		
 		let timeOfDay = getTimeOfDay(
 			localTimeUtc: currentForecast.lastUpdated,

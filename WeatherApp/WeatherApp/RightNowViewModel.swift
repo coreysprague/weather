@@ -8,7 +8,7 @@ struct RightNowViewModel {
 	let city: String
 	let country: String
 	
-	init(forecast: ForecastResponse, timeZone: TimeZone, location: CLPlacemark?) {
+	init(forecast: CurrentWeatherResponse, timeZone: TimeZone, location: CLPlacemark?) {
 		temperature = TemperatureFormatter().string(from: forecast.weather.temperature)
 		weather = forecast.conditions.first?.description ?? ""
 		
@@ -17,7 +17,14 @@ struct RightNowViewModel {
 		lastUpdatedFormatter.timeZone = timeZone
 		lastUpdated = lastUpdatedFormatter.string(from: forecast.lastUpdated)
 		
-		city = "\(location?.locality ?? forecast.location.name), \(location?.administrativeArea ?? "")"
+		let locationName = location?.locality ?? forecast.location.name
+		let adminArea = location?.administrativeArea ?? ""
+		
+		if(locationName == adminArea){
+			city = locationName
+		} else {
+			city = "\(locationName), \(adminArea)"
+		}
 		country = location?.country ?? forecast.location.country
 	}
 }

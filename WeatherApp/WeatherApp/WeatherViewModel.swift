@@ -7,7 +7,8 @@ class WeatherViewModel {
 	private lazy var geocoder = CLGeocoder()
 
 	let currentWeather = Observable<CurrentWeatherViewModel>()
-	let forecast = Observable<ForecastViewModel>()
+	let hourlyForecast = Observable<[HourlyForecastViewModel]>()
+	let dailyForecast = Observable<[DailyForecastViewModel]>()
 	let searchLocation = Observable<String>()
 	
 	init(weatherService: WeatherService) {
@@ -19,7 +20,6 @@ class WeatherViewModel {
 	func load(){
 		searchLocation.value = ""
 		currentWeather.value = nil
-		forecast.value = nil
 		locationProvider.locate()
 	}
 	
@@ -36,7 +36,6 @@ class WeatherViewModel {
 	
 	func search(searchString: String, onFailure: @escaping (Error) -> Void){
 		let failure : (Error) -> Void = { (Error) in
-			self.forecast.value = nil
 			self.currentWeather.value = nil
 			onFailure(Error)
 		}
@@ -47,20 +46,27 @@ class WeatherViewModel {
 		}
 	}
 	
-	private func displayWeather(forecastResponse: ForecastResponse) {
+	private func displayWeather(forecastResponse: CurrentWeatherResponse) {
 		self.geocoder.reverseGeocodeLocation(forecastResponse.location.location) { (placemarks, error) in
 			if let reverseLocation = placemarks?.first {
 				self.buildWeatherViewModel(currentForecast: forecastResponse, geoLocation: reverseLocation)
-				self.weatherService.getForecastByCityId(
-						cityId: forecastResponse.location.id,
-						completion: { (fiveDayForecast) in
-							self.buildForecastViewModel(fiveDayForecast: fiveDayForecast, geoLocation: reverseLocation)
+				
+				self.weatherService.getHourlyForecastByCityId(
+					cityId: forecastResponse.location.id,
+					completion: { (forecastResponse) in
+						self.displayHourlyForecast(forecast: forecastResponse, geoLocation: reverseLocation)
+				})
+				
+				self.weatherService.getDailyForecastByCityId(
+					cityId: forecastResponse.location.id,
+					completion: { (forecastResponse) in
+						self.displayDailyForecast(forecast: forecastResponse, geoLocation: reverseLocation)
 				})
 			}
 		}
 	}
 	
-	private func buildWeatherViewModel(currentForecast: ForecastResponse, geoLocation: CLPlacemark?) {
+	private func buildWeatherViewModel(currentForecast: CurrentWeatherResponse, geoLocation: CLPlacemark?) {
 		let timeZone = geoLocation?.timeZone ?? TimeZone.current
 		let rightNow = RightNowViewModel(forecast: currentForecast, timeZone: timeZone, location: geoLocation)
 		let details = DetailsViewModel(forecast: currentForecast, timeZone: timeZone)
@@ -68,51 +74,21 @@ class WeatherViewModel {
 		self.currentWeather.value = CurrentWeatherViewModel(rightNow: rightNow, details: details, backgroundImageAsset: backgroundImage)
 	}
 	
-	///THIS WHOLE METHOD WAS SPIKED IN AND NEEDS TO BE REFACTORED - ITS A MESS
-	private func buildForecastViewModel(fiveDayForecast: [ForecastResponse], geoLocation: CLPlacemark?) {
+	private func displayHourlyForecast(forecast: [HourlyForecastResponse], geoLocation: CLPlacemark?) {
 		let timeZone = geoLocation?.timeZone ?? TimeZone.current
-		
 		var hourlyForecasts = [HourlyForecastViewModel]()
-		var dayForecasts = [DailyForecastViewModel]()
-		
-		let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-		
-		var localizedDailyForecasts = [String:[ForecastResponse]]()
-		for forecast in fiveDayForecast {
-			let components = calendar.dateComponents(in: timeZone, from: forecast.lastUpdated)
-			if(components.year != nil && components.month != nil && components.day != nil){
-				let key = "\(components.year)-\(components.month)-\(components.day)"
-				if(localizedDailyForecasts[key] == nil){
-					localizedDailyForecasts[key] = [forecast]
-				} else {
-					localizedDailyForecasts[key]!.append(forecast)
-				}
-			}
-			hourlyForecasts.append(HourlyForecastViewModel(forecast: forecast, timeZone: timeZone))
+		for hour in forecast {
+			hourlyForecasts.append(HourlyForecastViewModel(forecast: hour, timeZone: timeZone))
 		}
-		
-		let sortedDays = Array(localizedDailyForecasts.keys).sorted { (A, B) -> Bool in
-			return A < B
+		self.hourlyForecast.value = hourlyForecasts
+	}
+	
+	private func displayDailyForecast(forecast: [DailyForecastResponse], geoLocation: CLPlacemark?) {
+		let timeZone = geoLocation?.timeZone ?? TimeZone.current
+		var dailyForecasts = [DailyForecastViewModel]()
+		for day in forecast {
+			dailyForecasts.append(DailyForecastViewModel(forecast: day, timeZone: timeZone))
 		}
-		for day in sortedDays {
-			let forecasts = localizedDailyForecasts[day]
-			var highTemp: Measurement<UnitTemperature>? = nil
-			var lowTemp: Measurement<UnitTemperature>? = nil
-			var date: Date? = nil
-			var condition: WeatherCondition? = nil
-			
-			for forecast in forecasts! {
-				if highTemp == nil || highTemp!.value < forecast.weather.highTemperature.value {
-					highTemp = forecast.weather.highTemperature
-				}
-				if lowTemp == nil || lowTemp!.value > forecast.weather.lowTemperature.value {
-					lowTemp = forecast.weather.lowTemperature
-				}
-				date = forecast.lastUpdated
-				condition = forecast.conditions.first
-			}
-			dayForecasts.append(DailyForecastViewModel(date: date!, timeZone: timeZone, highTemp: highTemp!, lowTemp: lowTemp!, condition: condition!))
-		}
-		self.forecast.value = ForecastViewModel(hourlyForecast: hourlyForecasts, dailyForecast: dayForecasts)
+		self.dailyForecast.value = dailyForecasts
 	}
 }

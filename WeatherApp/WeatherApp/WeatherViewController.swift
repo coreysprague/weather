@@ -19,7 +19,8 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 		viewModel.currentWeather.addListener(handler: { [weak self] in self!.updateWeather }())
-		viewModel.forecast.addListener(handler: { [weak self] in self!.updateForecast }())
+		viewModel.hourlyForecast.addListener(handler: { [weak self] in self!.updateHourlyForecast }())
+		viewModel.dailyForecast.addListener(handler: { [weak self] in self!.updateDailyForecast }())
 		viewModel.searchLocation.addListener(handler: { [weak self] in self!.updateSearchBar }())
 		
 		hourlyForecast.dataSource = hourlyForecastDataSource
@@ -65,12 +66,13 @@ class WeatherViewController: UIViewController, UIScrollViewDelegate {
 		}, completion: nil)
 	}
 	
-	private func updateForecast(forecast: ForecastViewModel?){
-		if(forecast != nil){
-			hourlyForecastDataSource.hourlyForecasts = forecast!.hourlyForecast
-			dailyForecastDataSource.dailyForecasts = forecast!.dailyForecast
-		}
+	private func updateHourlyForecast(forecast: [HourlyForecastViewModel]?){
+		hourlyForecastDataSource.hourlyForecasts = forecast ?? [HourlyForecastViewModel]()
 		hourlyForecast.reloadData()
+	}
+	
+	private func updateDailyForecast(forecast: [DailyForecastViewModel]?){
+		dailyForecastDataSource.dailyForecasts = forecast ?? [DailyForecastViewModel]()
 		dailyForecast.reloadData()
 	}
 
