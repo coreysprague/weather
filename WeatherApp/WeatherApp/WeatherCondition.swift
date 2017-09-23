@@ -1,7 +1,7 @@
 import Foundation
 
 struct WeatherCondition {
-	let id: Int
+	let conditionId: Int
 	let main: String
 	let description: String
 }

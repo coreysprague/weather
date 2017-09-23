@@ -39,6 +39,7 @@
 		0E715D631F230C4F00695360 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E715D621F230C4F00695360 /* WeatherAppUITests.swift */; };
 		0EA94C761F2BADF9001790DB /* RightNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA94C751F2BADF9001790DB /* RightNowView.swift */; };
 		0EA94C7A1F2BB1BA001790DB /* RightNowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA94C791F2BB1BA001790DB /* RightNowView.xib */; };
+		0EF1AEA41F72268E00DD7FD2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1AEA31F72268E00DD7FD2 /* .swiftlint.yml */; };
 		0EF508BC1F2BC6450027BFD2 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF508BB1F2BC6450027BFD2 /* WeatherViewModel.swift */; };
 		0EF508BE1F2BDE6B0027BFD2 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF508BD1F2BDE6B0027BFD2 /* WeatherService.swift */; };
 		0EF508C01F2C43F20027BFD2 /* HourlyForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF508BF1F2C43F20027BFD2 /* HourlyForecastCell.xib */; };
@@ -106,6 +107,7 @@
 		0E715D641F230C4F00695360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EA94C751F2BADF9001790DB /* RightNowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightNowView.swift; sourceTree = "<group>"; };
 		0EA94C791F2BB1BA001790DB /* RightNowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightNowView.xib; sourceTree = "<group>"; };
+		0EF1AEA31F72268E00DD7FD2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0EF508BB1F2BC6450027BFD2 /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		0EF508BD1F2BDE6B0027BFD2 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		0EF508BF1F2C43F20027BFD2 /* HourlyForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyForecastCell.xib; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		0E715D361F230C4F00695360 = {
 			isa = PBXGroup;
 			children = (
+				0EF1AEA31F72268E00DD7FD2 /* .swiftlint.yml */,
 				0E715D411F230C4F00695360 /* WeatherApp */,
 				0E715D561F230C4F00695360 /* WeatherAppTests */,
 				0E715D611F230C4F00695360 /* WeatherAppUITests */,
@@ -297,6 +300,7 @@
 				0E715D3D1F230C4F00695360 /* Resources */,
 				1D715A48897522B9F7C593EA /* [CP] Embed Pods Frameworks */,
 				6BC43C88367EA2499BD8BDD7 /* [CP] Copy Pods Resources */,
+				0EF1AEA21F7224A700DD7FD2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -401,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF1AEA41F72268E00DD7FD2 /* .swiftlint.yml in Resources */,
 				0E39EC531F661C9E001AE143 /* Backlog.rtf in Resources */,
 				0E3DF4851F6481D0007EE6C1 /* DailyForecastCell.xib in Resources */,
 				0E715D4D1F230C4F00695360 /* LaunchScreen.storyboard in Resources */,
@@ -429,6 +434,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0EF1AEA21F7224A700DD7FD2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		1D715A48897522B9F7C593EA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

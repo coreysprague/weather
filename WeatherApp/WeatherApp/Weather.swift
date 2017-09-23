@@ -5,5 +5,3 @@ struct Weather {
 	let pressure: Measurement<UnitPressure>
 	let humidity: Double
 }
-
-

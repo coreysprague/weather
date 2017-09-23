@@ -1,11 +1,11 @@
 import Foundation
 
 class Observable<T> {
-	private var instance : T? = nil
-	
+	private var instance: T?
+
 	var value: T? {
-		get{
-			return instance;
+		get {
+			return instance
 		}
 		set (newItem) {
 			instance = newItem
@@ -14,10 +14,10 @@ class Observable<T> {
 			}
 		}
 	}
-	
+
 	private var listeners = [(T?) -> Void]()
-	
-	func addListener(handler: @escaping (T?) -> Void){
+
+	func addListener(handler: @escaping (T?) -> Void) {
 		listeners.append(handler)
 	}
 }

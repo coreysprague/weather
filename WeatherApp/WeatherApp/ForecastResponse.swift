@@ -21,6 +21,3 @@ struct HourlyForecastResponse {
 	let weather: Weather
 	let time: Date
 }
-
-
-

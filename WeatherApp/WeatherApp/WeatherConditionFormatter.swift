@@ -1,6 +1,7 @@
 import Foundation
 
 class WeatherConditionFormatter {
+	// swiftlint:disable cyclomatic_complexity
 	func string(from: WeatherCondition) -> String {
 		let sun = "☀️"
 		let snow = "🌨"
@@ -13,10 +14,8 @@ class WeatherConditionFormatter {
 		let wind = "🌬"
 		let cold = "❄️"
 		let hot = "🔥"
-		
-		
-		
-		switch from.id {
+
+		switch from.conditionId {
 		case 200..<300:
 			return thunder
 		case 300..<600:
@@ -31,7 +30,7 @@ class WeatherConditionFormatter {
 			return cloudy
 		case 900:
 			return tornado
-		case 901,902:
+		case 901, 902:
 			return hurricane
 		case 903:
 			return cold
@@ -44,6 +43,6 @@ class WeatherConditionFormatter {
 		default:
 			return ""
 		}
-		
 	}
+	// swiftlint:enable cyclomatic_complexity
 }
