@@ -1,11 +1,3 @@
-//
-//  WeatherAppUITests.swift
-//  WeatherAppUITests
-//
-//  Created by Leslie Perdue on 7/21/17.
-//  Copyright © 2017 Corey Sprague. All rights reserved.
-//
-
 import XCTest
 
 class WeatherAppUITests: XCTestCase {

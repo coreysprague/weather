@@ -40,6 +40,9 @@
 		0EA94C761F2BADF9001790DB /* RightNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA94C751F2BADF9001790DB /* RightNowView.swift */; };
 		0EA94C7A1F2BB1BA001790DB /* RightNowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA94C791F2BB1BA001790DB /* RightNowView.xib */; };
 		0EF1AEA41F72268E00DD7FD2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1AEA31F72268E00DD7FD2 /* .swiftlint.yml */; };
+		0EF1AEAA1F761A6B00DD7FD2 /* DailyForecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1AEA91F761A6B00DD7FD2 /* DailyForecast.json */; };
+		0EF1AEAC1F761A9000DD7FD2 /* HourlyForecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1AEAB1F761A9000DD7FD2 /* HourlyForecast.json */; };
+		0EF1AEAE1F761B2C00DD7FD2 /* CurrentWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1AEAD1F761B2C00DD7FD2 /* CurrentWeather.json */; };
 		0EF508BC1F2BC6450027BFD2 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF508BB1F2BC6450027BFD2 /* WeatherViewModel.swift */; };
 		0EF508BE1F2BDE6B0027BFD2 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF508BD1F2BDE6B0027BFD2 /* WeatherService.swift */; };
 		0EF508C01F2C43F20027BFD2 /* HourlyForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF508BF1F2C43F20027BFD2 /* HourlyForecastCell.xib */; };
@@ -108,6 +111,9 @@
 		0EA94C751F2BADF9001790DB /* RightNowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightNowView.swift; sourceTree = "<group>"; };
 		0EA94C791F2BB1BA001790DB /* RightNowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightNowView.xib; sourceTree = "<group>"; };
 		0EF1AEA31F72268E00DD7FD2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0EF1AEA91F761A6B00DD7FD2 /* DailyForecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DailyForecast.json; sourceTree = "<group>"; };
+		0EF1AEAB1F761A9000DD7FD2 /* HourlyForecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HourlyForecast.json; sourceTree = "<group>"; };
+		0EF1AEAD1F761B2C00DD7FD2 /* CurrentWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrentWeather.json; sourceTree = "<group>"; };
 		0EF508BB1F2BC6450027BFD2 /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		0EF508BD1F2BDE6B0027BFD2 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		0EF508BF1F2C43F20027BFD2 /* HourlyForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyForecastCell.xib; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 		0E715D561F230C4F00695360 /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				0EF1AEAF1F761C9600DD7FD2 /* ApiResponses */,
 				0E715D571F230C4F00695360 /* WeatherAppTests.swift */,
 				0E715D591F230C4F00695360 /* Info.plist */,
 			);
@@ -262,6 +269,16 @@
 				0E715D641F230C4F00695360 /* Info.plist */,
 			);
 			path = WeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		0EF1AEAF1F761C9600DD7FD2 /* ApiResponses */ = {
+			isa = PBXGroup;
+			children = (
+				0EF1AEAD1F761B2C00DD7FD2 /* CurrentWeather.json */,
+				0EF1AEAB1F761A9000DD7FD2 /* HourlyForecast.json */,
+				0EF1AEA91F761A6B00DD7FD2 /* DailyForecast.json */,
+			);
+			name = ApiResponses;
 			sourceTree = "<group>";
 		};
 		4A464306FAAA0A9284DB5E0A /* Pods */ = {
@@ -421,6 +438,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF1AEAA1F761A6B00DD7FD2 /* DailyForecast.json in Resources */,
+				0EF1AEAE1F761B2C00DD7FD2 /* CurrentWeather.json in Resources */,
+				0EF1AEAC1F761A9000DD7FD2 /* HourlyForecast.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +788,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5A49F7F8741BD5CD76C8054 /* Pods-WeatherApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8F8KCJMB2H;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
@@ -782,6 +803,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BC3EC1DA28ECBC15EA60A51 /* Pods-WeatherApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8F8KCJMB2H;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
@@ -796,7 +818,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD09E16778E681094F8A8C16 /* Pods-WeatherAppTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WeatherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -811,7 +833,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B8A41F2A4E8FBD86104BC319 /* Pods-WeatherAppTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WeatherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -826,7 +848,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC09BFA6B0C1F233C665B7CA /* Pods-WeatherAppUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				INFOPLIST_FILE = WeatherAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = coreysprague.WeatherAppUITests;
@@ -840,7 +862,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 16A70135FB2002F8D629B2C9 /* Pods-WeatherAppUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				INFOPLIST_FILE = WeatherAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = coreysprague.WeatherAppUITests;

@@ -1,0 +1,42 @@
+{
+	"coord": {
+		"lon": -122.99,
+		"lat": 45.52
+	},
+	"weather": [
+				{
+				"id": 800,
+				"main": "Clear",
+				"description": "clear sky",
+				"icon": "01n"
+				}
+    ],
+	"base": "stations",
+	"main": {
+		"temp": 287.75,
+		"pressure": 1018,
+		"humidity": 82,
+		"temp_min": 286.15,
+		"temp_max": 289.15
+	},
+	"visibility": 16093,
+	"wind": {
+		"speed": 1.5,
+		"deg": 340
+	},
+	"clouds": {
+		"all": 1
+	},
+	"dt": 1506138960,
+	"sys": {
+		"type": 1,
+		"id": 2275,
+		"message": 0.004,
+		"country": "US",
+		"sunrise": 1506175254,
+		"sunset": 1506218788
+	},
+	"id": 5731371,
+	"name": "Hillsboro",
+	"cod": 200
+}

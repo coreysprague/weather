@@ -1,18 +1,36 @@
 PODS:
   - Alamofire (4.5.0)
+  - OHHTTPStubs (6.0.0):
+    - OHHTTPStubs/Default (= 6.0.0)
+  - OHHTTPStubs/Core (6.0.0)
+  - OHHTTPStubs/Default (6.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.0.0)
+  - OHHTTPStubs/Swift (6.0.0):
+    - OHHTTPStubs/Default
   - SwiftLint (0.22.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (= 4.5.0)
+  - OHHTTPStubs (= 6.0.0)
+  - OHHTTPStubs/Swift (= 6.0.0)
   - SwiftLint (= 0.22.0)
   - SwiftyJSON (= 3.1.4)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  OHHTTPStubs: 752f9b11fd810a15162d50f11c06ff94f8e012eb
   SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 38cb20021c9d03ec62340b90e2fb1e5c17001db7
+PODFILE CHECKSUM: 6d976e0d18c45116635ca73dd612136ac92282a3
 
 COCOAPODS: 1.2.1

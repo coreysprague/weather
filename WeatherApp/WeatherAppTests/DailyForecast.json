@@ -1,0 +1,138 @@
+{
+	"city": {
+		"id": 5731371,
+		"name": "Hillsboro",
+		"coord": {
+			"lon": -122.9899,
+			"lat": 45.5229
+		},
+		"country": "US",
+		"population": 0
+	},
+	"cod": "200",
+	"message": 0.6481446,
+	"cnt": 5,
+	"list": [
+			 {
+			 "dt": 1505332800,
+			 "temp": {
+			 "day": 296.24,
+			 "min": 282.17,
+			 "max": 296.24,
+			 "night": 282.17,
+			 "eve": 290.53,
+			 "morn": 296.24
+			 },
+			 "pressure": 1004.28,
+			 "humidity": 57,
+			 "weather": [
+						 {
+						 "id": 803,
+						 "main": "Clouds",
+						 "description": "broken clouds",
+						 "icon": "04d"
+						 }
+						 ],
+			 "speed": 1.77,
+			 "deg": 303,
+			 "clouds": 56
+			 },
+			 {
+			 "dt": 1505419200,
+			 "temp": {
+			 "day": 293.23,
+			 "min": 282.14,
+			 "max": 293.91,
+			 "night": 283.23,
+			 "eve": 289.88,
+			 "morn": 282.14
+			 },
+			 "pressure": 1004.36,
+			 "humidity": 60,
+			 "weather": [
+						 {
+						 "id": 800,
+						 "main": "Clear",
+						 "description": "sky is clear",
+						 "icon": "02d"
+						 }
+						 ],
+			 "speed": 1.83,
+			 "deg": 353,
+			 "clouds": 8
+			 },
+			 {
+			 "dt": 1505505600,
+			 "temp": {
+			 "day": 295.14,
+			 "min": 281.95,
+			 "max": 295.43,
+			 "night": 282.39,
+			 "eve": 289.37,
+			 "morn": 281.95
+			 },
+			 "pressure": 1008.17,
+			 "humidity": 49,
+			 "weather": [
+						 {
+						 "id": 800,
+						 "main": "Clear",
+						 "description": "sky is clear",
+						 "icon": "01d"
+						 }
+						 ],
+			 "speed": 1.55,
+			 "deg": 357,
+			 "clouds": 0
+			 },
+			 {
+			 "dt": 1505592000,
+			 "temp": {
+			 "day": 289.04,
+			 "min": 279.75,
+			 "max": 293.77,
+			 "night": 284.16,
+			 "eve": 293.77,
+			 "morn": 279.75
+			 },
+			 "pressure": 1000.31,
+			 "humidity": 0,
+			 "weather": [
+						 {
+						 "id": 500,
+						 "main": "Rain",
+						 "description": "light rain",
+						 "icon": "10d"
+						 }
+						 ],
+			 "speed": 1.42,
+			 "deg": 5,
+			 "clouds": 55
+			 },
+			 {
+			 "dt": 1505678400,
+			 "temp": {
+			 "day": 288.53,
+			 "min": 279.52,
+			 "max": 288.53,
+			 "night": 284.34,
+			 "eve": 287.56,
+			 "morn": 279.52
+			 },
+			 "pressure": 994.79,
+			 "humidity": 0,
+			 "weather": [
+						 {
+						 "id": 501,
+						 "main": "Rain",
+						 "description": "moderate rain",
+						 "icon": "10d"
+						 }
+						 ],
+			 "speed": 1.35,
+			 "deg": 185,
+			 "clouds": 74,
+			 "rain": 3.36
+			 }
+    ]
+}
