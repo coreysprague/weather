@@ -139,10 +139,9 @@ class OpenWeatherMapService: WeatherService {
 			sunset = Date(timeIntervalSince1970: sunsetResponse)
 		}
 
-		let location = CLLocation(latitude: json["coord"]["lat"].doubleValue, longitude: json["coord"]["lon"].doubleValue)
-
 		let forecastLocation = ForecastLocation(
-							location: location,
+							latitude: json["coord"]["lat"].doubleValue,
+							longitude: json["coord"]["lon"].doubleValue,
 							locationId: json["id"].intValue,
 							name: json["name"].stringValue,
 							country: json["sys"]["country"].stringValue,

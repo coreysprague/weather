@@ -49,7 +49,11 @@ class WeatherViewModel {
 	}
 
 	private func displayWeather(forecastResponse: CurrentWeatherResponse) {
-		self.geocoder.reverseGeocodeLocation(forecastResponse.location.location) { (placemarks, _) in
+		let location = CLLocation(
+						latitude: forecastResponse.location.latitude,
+						longitude: forecastResponse.location.longitude
+		)
+		self.geocoder.reverseGeocodeLocation(location) { (placemarks, _) in
 			if let reverseLocation = placemarks?.first {
 				self.buildWeatherViewModel(currentForecast: forecastResponse, geoLocation: reverseLocation)
 
