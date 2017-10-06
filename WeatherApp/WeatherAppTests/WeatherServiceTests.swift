@@ -3,7 +3,7 @@ import OHHTTPStubs
 import CoreLocation
 @testable import WeatherApp
 
-class WeatherAppTests: XCTestCase {
+class WeatherServiceTests: XCTestCase {
 	var service: WeatherService = OpenWeatherMapService()
 	var expect: XCTestExpectation?
 
@@ -79,7 +79,7 @@ class WeatherAppTests: XCTestCase {
 		givenCurrentForecastSearchWillFail(forInvalidCity)
 		service.getWeatherByCity(
 			city: invalidCity,
-			completion: assertCallbackNotInvoked,
+			completion: assertCompletionCallbackNotInvoked,
 			failure: assertFailureCallbackInvoked
 		)
 		failIfNeitherCallbackInvoked()
@@ -89,7 +89,7 @@ class WeatherAppTests: XCTestCase {
 		givenCurrentForecastSearchWillFail(forInvalidCityId)
 		service.getWeatherByCityId(
 			cityId: invalidCityId,
-			completion: assertCallbackNotInvoked,
+			completion: assertCompletionCallbackNotInvoked,
 			failure: assertFailureCallbackInvoked
 		)
 		failIfNeitherCallbackInvoked()
@@ -99,7 +99,7 @@ class WeatherAppTests: XCTestCase {
 		givenCurrentForecastSearchWillFail(forInvalidZip)
 		service.getWeatherByZipcode(
 			zipCode: invalidZip,
-			completion: assertCallbackNotInvoked,
+			completion: assertCompletionCallbackNotInvoked,
 			failure: assertFailureCallbackInvoked
 		)
 		failIfNeitherCallbackInvoked()
@@ -108,7 +108,7 @@ class WeatherAppTests: XCTestCase {
 	func testFailedWeatherSearchByLocation() {
 		givenCurrentForecastSearchWillFail(forInvalidCoordinates)
 		service.getWeatherByLocation(location: invalidCoordinates,
-		                             completion: assertCallbackNotInvoked,
+		                             completion: assertCompletionCallbackNotInvoked,
 		                             failure: assertFailureCallbackInvoked
 		)
 		failIfNeitherCallbackInvoked()
@@ -201,7 +201,7 @@ class WeatherAppTests: XCTestCase {
 		self.expect?.fulfill()
 	}
 
-	func assertCallbackNotInvoked(_ response: CurrentWeatherResponse) {
+	func assertCompletionCallbackNotInvoked(_ response: CurrentWeatherResponse) {
 		XCTFail("should not have been invoked")
 		self.expect?.fulfill()
 	}

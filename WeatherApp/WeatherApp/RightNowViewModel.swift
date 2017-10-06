@@ -18,12 +18,10 @@ struct RightNowViewModel {
 		lastUpdated = lastUpdatedFormatter.string(from: forecast.lastUpdated)
 
 		let locationName = location?.locality ?? forecast.location.name
-		let adminArea = location?.administrativeArea ?? ""
-
-		if locationName == adminArea {
-			city = locationName
-		} else {
+		if let adminArea = location?.administrativeArea, adminArea != locationName {
 			city = "\(locationName), \(adminArea)"
+		} else {
+			city = locationName
 		}
 		country = location?.country ?? forecast.location.country
 	}
