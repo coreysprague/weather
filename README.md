@@ -34,7 +34,7 @@
 * show network indicator during network requests
 * shorter network timeouts & better UX when internet is unavailable
 * pull to refresh
-* allow user to re-engage GPS (currently done automatically on load)
+* allow user to search again via GPS (GPS search is currently only performed on load)
 * more contextual images: extreme weather conditions, more options for common conditions (clear sky, clouds, rain, etc)
 
 *Feature Backlog*
