@@ -66,7 +66,7 @@ class RightNowViewModelTests: XCTestCase {
 		XCTAssertEqual(viewModel?.country, "United States")
 	}
 
-	func testShouldNotRepeatLocationsWhenTheyLocalityAndAdminAreaAreIdentical() {
+	func testShouldNotRepeatLocationNamesWhenTheLocalityAndAdminAreaAreIdentical() {
 		let weather = weatherBuilder.withLocation(ForecastLocation.Hillsboro).build()
 		let placemark = buildPlacemark(locale: "Hillsboro", adminArea: "Hillsboro", country: "United States")
 		whenViewModelBuilt(weather, geoLocation: placemark)
