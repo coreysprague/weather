@@ -10,26 +10,26 @@
 
 ## Screenshots
 ### Current Conditions
-![Current Conditions Screenshot]https://github.com/coreysprague/weather/blob/master/Screenshots/gps_top.png
+![Current Conditions Screenshot](https://github.com/coreysprague/weather/blob/master/Screenshots/gps_top.png)
 
 ### Forecast & Details
-![Forecast & Details Screenshot]https://github.com/coreysprague/weather/blob/master/Screenshots/gps_bottom.png
+![Forecast & Details Screenshot](https://github.com/coreysprague/weather/blob/master/Screenshots/gps_bottom.png)
 
 ### Metric unit support
-![Metric Screenshot]https://github.com/coreysprague/weather/blob/master/Screenshots/localization.png
+![Metric Screenshot](https://github.com/coreysprague/weather/blob/master/Screenshots/localization.png)
 
 ### Contextual Images
 *Clear Sky - Morning*
-![Clear Sky Morning]https://github.com/coreysprague/weather/blob/master/Screenshots/clear_morning_sky.png
+![Clear Sky Morning](https://github.com/coreysprague/weather/blob/master/Screenshots/clear_morning_sky.png)
 
 *Cloudy - Evening*
-![Cloudy Evening]https://github.com/coreysprague/weather/blob/master/Screenshots/clouds.png
+![Cloudy Evening](https://github.com/coreysprague/weather/blob/master/Screenshots/clouds.png)
 
 *Fog - Night*
-![Fog Nighttime]https://github.com/coreysprague/weather/blob/master/Screenshots/fog.png
+![Fog Nighttime](https://github.com/coreysprague/weather/blob/master/Screenshots/fog.png)
 
 *Few Clouds - Morning*
-![Few Clouds Morning]https://github.com/coreysprague/weather/blob/master/Screenshots/fewclouds_morning.png
+![Few Clouds Morning](https://github.com/coreysprague/weather/blob/master/Screenshots/fewclouds_morning.png)
 
 ## Backlog
 *Small item backlog*
