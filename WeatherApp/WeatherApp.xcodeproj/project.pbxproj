@@ -96,7 +96,6 @@
 		0E3DF4881F6481FC007EE6C1 /* DailyForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyForecastCell.swift; sourceTree = "<group>"; };
 		0E3DF48A1F6482D0007EE6C1 /* DailyForecastDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyForecastDataSource.swift; sourceTree = "<group>"; };
 		0E3DF48C1F6482DD007EE6C1 /* HourlyForecastDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecastDataSource.swift; sourceTree = "<group>"; };
-		0E457A911F874981004D7762 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0E715D3F1F230C4F00695360 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E715D421F230C4F00695360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E715D441F230C4F00695360 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -234,7 +233,6 @@
 		0E715D361F230C4F00695360 = {
 			isa = PBXGroup;
 			children = (
-				0E457A911F874981004D7762 /* README.md */,
 				0EF1AEA31F72268E00DD7FD2 /* .swiftlint.yml */,
 				0E715D411F230C4F00695360 /* WeatherApp */,
 				0E715D561F230C4F00695360 /* WeatherAppTests */,
