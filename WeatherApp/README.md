@@ -19,16 +19,13 @@
 ![Metric Screenshot](https://github.com/coreysprague/weather/blob/master/Screenshots/localization.png)
 
 ### Contextual Images
-*Clear Sky - Morning*
-![Clear Sky Morning](https://github.com/coreysprague/weather/blob/master/Screenshots/clear_morning_sky.png)
-
-*Cloudy - Evening*
+![Broken Clouds Afternoon](https://github.com/coreysprague/weather/blob/master/Screenshots/brokenclouds_afternoon.png)
+![Broken Clouds Morning](https://github.com/coreysprague/weather/blob/master/Screenshots/brokenclouds_morning.png)
+![Morning Mist](https://github.com/coreysprague/weather/blob/master/Screenshots/mist_morning.png)
+![Scattered Clouds Morning](https://github.com/coreysprague/weather/blob/master/Screenshots/scatteredclouds_morning.png)
+![Night Thunder](https://github.com/coreysprague/weather/blob/master/Screenshots/thunder_night.png)
 ![Cloudy Evening](https://github.com/coreysprague/weather/blob/master/Screenshots/clouds.png)
-
-*Fog - Night*
 ![Fog Nighttime](https://github.com/coreysprague/weather/blob/master/Screenshots/fog.png)
-
-*Few Clouds - Morning*
 ![Few Clouds Morning](https://github.com/coreysprague/weather/blob/master/Screenshots/fewclouds_morning.png)
 
 ## Backlog
